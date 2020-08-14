@@ -76,6 +76,10 @@ namespace Project0._2.Controllers
             _opportunityRepository.CreateOpportunity(opportunity);
             return RedirectToAction("OpportunityList");
         }
+        public IActionResult CreateOpportunity()
+        {
+            return View();
+        }
         [HttpGet]
         public IActionResult VolunteerDetails(int id)
         {
