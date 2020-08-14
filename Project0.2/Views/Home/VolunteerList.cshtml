@@ -31,29 +31,33 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApprovalStatus)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditVolunteer", new {  id=item.ID  }) |
-                @Html.ActionLink("Details", "VolunteerDetails", new {  id=item.ID  }) |
-                @Html.ActionLink("Delete", "DeleteVolunteer", new { id=item.ID })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApprovalStatus)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditVolunteer", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "VolunteerDetails", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "DeleteVolunteer", new { id = item.ID })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+<div>
+    <a asp-controller="Admin" asp-action="Index">Back to Manager</a>
+</div>
