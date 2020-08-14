@@ -1,16 +1,22 @@
 ﻿@model Project0._2.Models.Opportunity
 
 @{
-    ViewData["Title"] = "EditOpportunity";
+    ViewData["Title"] = "CreateOpportunity";
 }
 
-<h1 class="text-center">Edit Opportunity Details</h1>
+<h1 class="text-center">Create New Opportunity</h1>
 
 <h4>Opportunity</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="SaveOpportunity">
+        <form asp-action="CreateOpportunity">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -27,7 +33,7 @@
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>

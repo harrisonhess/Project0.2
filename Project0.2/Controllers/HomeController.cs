@@ -55,7 +55,7 @@ namespace Project0._2.Controllers
         [HttpGet]
         public IActionResult OpportunityDetails(int id)
         {
-            _opportunityRepository.GetOpportunity(id);
+            ViewData.Model = _opportunityRepository.GetOpportunity(id);
             return View();
         }
         [HttpGet]
@@ -63,6 +63,18 @@ namespace Project0._2.Controllers
         {
             ViewData.Model = _opportunityRepository.GetOpportunity(id);
             return View();
+        }
+        [HttpPost]
+        public IActionResult SaveOpportunity(Opportunity opportunity)
+        {
+            _opportunityRepository.SaveOpportunity(opportunity);
+            return RedirectToAction("OpportunityList");
+        }
+        [HttpPost]
+        public IActionResult CreateOpportunity(Opportunity opportunity)
+        {
+            _opportunityRepository.CreateOpportunity(opportunity);
+            return RedirectToAction("OpportunityList");
         }
         [HttpGet]
         public IActionResult VolunteerDetails(int id)
