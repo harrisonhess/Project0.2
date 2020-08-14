@@ -80,7 +80,7 @@ namespace Project0._2.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return RedirectToPage("Index", "Admin");
+                    return RedirectToAction("Index", "Admin");
                 }
                 if (result.RequiresTwoFactor)
                 {

@@ -73,16 +73,6 @@ namespace Project0._2.Areas.Identity.Pages.Account
                     _logger.LogInformation("User created a new account with password.");
                     return RedirectToPage("Login");
 
-
-                    if (_userManager.Options.SignIn.RequireConfirmedAccount)
-                    {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
-                    }
-                    else
-                    {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
-                    }
                 }
                 foreach (var error in result.Errors)
                 {
