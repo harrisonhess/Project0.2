@@ -53,14 +53,14 @@ namespace Project0._2.Models
 
         public Opportunity SaveOpportunity(Opportunity Opportunity)
         {
-            Opportunity vol = Opportunities.FirstOrDefault(v => v.id == Opportunity.id);
-            if (vol != null)
+            Opportunity op = Opportunities.FirstOrDefault(v => v.id == Opportunity.id);
+            if (op != null)
             {
-                vol.Name = Opportunity.Name;
-                vol.Center = Opportunity.Center;
-                vol.Date = Opportunity.Date;
+                op.Name = Opportunity.Name;
+                op.Center = Opportunity.Center;
+                op.Date = Opportunity.Date;
             }
-            return vol;
+            return op;
         }
     }
 }
