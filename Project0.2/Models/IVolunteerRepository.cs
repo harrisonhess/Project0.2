@@ -7,6 +7,7 @@ namespace Project0._2.Models
 {
     public interface IVolunteerRepository
     {
+        IEnumerable<Volunteer> Search(string searchTerm);
         IEnumerable<Volunteer> getVolunteers();
         Volunteer SaveVolunteer(Volunteer volunteer);
         Volunteer DeleteVolunteer(int id);

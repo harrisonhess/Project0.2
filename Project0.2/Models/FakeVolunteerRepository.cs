@@ -49,7 +49,7 @@ namespace Project0._2.Models
         {
             return Volunteers;
         }
-
+       
         public Volunteer SaveVolunteer(Volunteer volunteer)
         {
             Volunteer vol = Volunteers.FirstOrDefault(v => v.ID == volunteer.ID);
@@ -75,6 +75,15 @@ namespace Project0._2.Models
                 vol.ApprovalStatus = volunteer.ApprovalStatus;
             }
             return vol;
+        }
+
+        public IEnumerable<Volunteer> Search(string searchTerm)
+        {
+            if (String.IsNullOrEmpty(searchTerm))
+            {
+                return Volunteers;
+            }
+            return Volunteers.Where(e => e.FirstName.Contains(searchTerm) || e.LastName.Contains(searchTerm) || e.Email.Contains(searchTerm));
         }
     }
 }

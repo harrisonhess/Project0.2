@@ -125,6 +125,16 @@ namespace Project0._2.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult Search(string SearchString)
+        {
+            if (!String.IsNullOrEmpty(SearchString))
+            {
+                ViewData.Model = _volunteerRepository.Search(SearchString);
+            }
+            return View("VolunteerList");
+
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

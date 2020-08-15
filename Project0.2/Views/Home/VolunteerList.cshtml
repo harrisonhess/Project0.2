@@ -9,6 +9,15 @@
 <p>
     <a asp-action="CreateVolunteer">Add New Volunteer</a>
 </p>
+
+<form asp-action="Search" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Name: <input type="text" name="SearchString" value="@ViewData["searchTerm"]"/>
+            <input type="submit" value="Search" class="btn"/>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
