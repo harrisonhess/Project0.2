@@ -88,6 +88,16 @@ namespace Project0._2.Controllers
             return View();
         }
         [HttpGet]
+        public IActionResult SearchOpps(string SearchKey)
+        {
+            if (!String.IsNullOrEmpty(SearchKey))
+            {
+                ViewData.Model = _opportunityRepository.SearchOpps(SearchKey);
+            }
+            return View("OpportunityList");
+
+        }
+        [HttpGet]
         public IActionResult VolunteerDetails(int id)
         {
             ViewData.Model = _volunteerRepository.getVolunteer(id);

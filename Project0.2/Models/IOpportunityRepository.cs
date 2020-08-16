@@ -8,6 +8,7 @@ namespace Project0._2.Models
 {
     public interface IOpportunityRepository
     {
+        IEnumerable<Opportunity> SearchOpps(string keyword);
         IEnumerable<Opportunity> GetOpportunities();
         Opportunity SaveOpportunity(Opportunity op);
         Opportunity DeleteOpportunity(int id);

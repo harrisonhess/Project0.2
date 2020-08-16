@@ -64,5 +64,17 @@ namespace Project0._2.Models
             }
             return op;
         }
+
+        public IEnumerable<Opportunity> SearchOpps(string keyword)
+        {
+            if (!String.IsNullOrEmpty(keyword) || keyword != null)
+            {
+                return Opportunities.Where(e => e.Name.Contains(keyword) || e.Center.Contains(keyword));
+            }
+            else
+            {
+                return Opportunities;
+            }
+        }
     }
 }

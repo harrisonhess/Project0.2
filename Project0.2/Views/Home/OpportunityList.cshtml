@@ -6,8 +6,14 @@
 
 <h1 class="text-center">Volunteer Opportunities</h1>
 
-<p style="text-align: left;">
+<p>
     <a asp-action="CreateOpportunity">Create New Opportunity</a>
+</p>
+    <form asp-action="SearchOpps" method="get">
+        <div class="form-actions no-color">
+<p style="text-align: left;">
+     Search by Keyword: <input type="text" name="SearchKey" value="@ViewData["keyword"]" />
+    <input type="submit" value="Search" class="btn btn-primary" />
     <span style="float: right;">
         @Html.DropDownList("OpportunitySort", new List<SelectListItem>
    {
@@ -20,6 +26,8 @@
    }, "Sort by")
     </span>
 </p>
+ </div>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -36,24 +44,25 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Center)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditOpportunity", new { id=item.id }) |
-                @Html.ActionLink("Details", "OpportunityDetails", new { id=item.id }) |
-                @Html.ActionLink("Delete", "DeleteOpportunity", new { id=item.id })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Center)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditOpportunity", new { id = item.id }) |
+                    @Html.ActionLink("Details", "OpportunityDetails", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "DeleteOpportunity", new { id = item.id })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 <div>
