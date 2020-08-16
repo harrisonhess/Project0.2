@@ -6,8 +6,19 @@
 
 <h1 class="text-center">Volunteer Opportunities</h1>
 
-<p>
+<p style="text-align: left;">
     <a asp-action="CreateOpportunity">Create New Opportunity</a>
+    <span style="float: right;">
+        @Html.DropDownList("OpportunitySort", new List<SelectListItem>
+   {
+       new SelectListItem {Text = "All", Value = "1", Selected = true},
+       new SelectListItem {Text = "Central Park", Value = "2" },
+       new SelectListItem {Text = "Central Beach", Value = "3"},
+       new SelectListItem {Text = "Central Highway", Value = "4"},
+       new SelectListItem {Text = "TLC Elder Home", Value = "5"},
+       new SelectListItem {Text = "Lakeside Park", Value = "6"},
+   }, "Sort by")
+    </span>
 </p>
 <table class="table">
     <thead>

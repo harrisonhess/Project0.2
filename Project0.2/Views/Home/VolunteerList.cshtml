@@ -12,9 +12,20 @@
 
 <form asp-action="Search" method="get">
     <div class="form-actions no-color">
-        <p>
-            Find by Name: <input type="text" name="SearchString" value="@ViewData["searchTerm"]"/>
-            <input type="submit" value="Search" class="btn"/>
+        <p style="text-align: left;">
+            Search by Name: <input type="text" name="SearchString" value="@ViewData["searchTerm"]" />
+            <input type="submit" value="Search" class="btn btn-primary" />
+            <span style="float: right;">
+                @Html.DropDownList("VolunteerSort", new List<SelectListItem>
+           {
+               new SelectListItem {Text = "All", Value = "1", Selected = true},
+               new SelectListItem {Text = "Approved", Value = "2" },
+               new SelectListItem {Text = "Approved/Pending", Value = "3"},
+               new SelectListItem {Text = "Pending", Value = "4"},
+               new SelectListItem {Text = "Disapproved", Value = "5"},
+               new SelectListItem {Text = "Inactive", Value = "6"},
+           }, "Sort by")
+            </span>
         </p>
     </div>
 </form>

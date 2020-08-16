@@ -79,11 +79,14 @@ namespace Project0._2.Models
 
         public IEnumerable<Volunteer> Search(string searchTerm)
         {
-            if (String.IsNullOrEmpty(searchTerm))
+            if (!String.IsNullOrEmpty(searchTerm) || searchTerm != null)
+            {
+                return Volunteers.Where(e => e.FirstName.Contains(searchTerm) || e.LastName.Contains(searchTerm) || e.Email.Contains(searchTerm));
+            }
+            else
             {
                 return Volunteers;
             }
-            return Volunteers.Where(e => e.FirstName.Contains(searchTerm) || e.LastName.Contains(searchTerm) || e.Email.Contains(searchTerm));
         }
     }
 }

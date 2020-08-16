@@ -15,9 +15,11 @@ namespace Project0._2.Models
             {
                 new Opportunity { id = 1, Name = "Park Cleanup", Center = "Central Park", Date = "August 31, 2020" },
                 new Opportunity { id = 2, Name = "Beach Cleanup", Center = "Central Beach", Date = "August 15, 2020" },
-                new Opportunity { id = 3, Name = "Highway Cleanup", Center = "Central Highway", Date = "November 16, 2020" },
-                new Opportunity { id = 4, Name = "Elderly Watch", Center = "TLC Elder Home", Date = "July 24, 2021" },
-                new Opportunity { id = 5, Name = "Kids Camp Help", Center = "Lakeside Park", Date = "May 11, 2021" }
+                new Opportunity { id = 3, Name = "Sea Turtle Watch", Center = "Central Beach", Date = "September 27, 2020" },
+                new Opportunity { id = 4, Name = "Highway Cleanup", Center = "Central Highway", Date = "November 16, 2020" },
+                new Opportunity { id = 5, Name = "Elderly Watch", Center = "TLC Elder Home", Date = "July 24, 2021" },
+                new Opportunity { id = 6, Name = "Kids Camp Help", Center = "Lakeside Park", Date = "May 11, 2021" },
+                new Opportunity { id = 7, Name = "Homeless Shelter Help", Center = "Central Park", Date = "February 14, 2021" }
             };
         }
 
