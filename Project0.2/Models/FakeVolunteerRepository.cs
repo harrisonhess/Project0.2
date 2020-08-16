@@ -14,9 +14,9 @@ namespace Project0._2.Models
             {
                 new Volunteer { ID = 1, FirstName = "John", LastName = "Doe", Username = "johndoe1", Password = "password123", Email = "johndoe1@gmail.com", ApprovalStatus = "Approved" },
                 new Volunteer { ID = 2, FirstName = "Jane", LastName = "Doe", Username = "janedoe2", Password = "pswd456", Email = "janedoe1@gmail.com", ApprovalStatus = "Approved" },
-                new Volunteer { ID = 3, FirstName = "Jerry", LastName = "Dough", Username = "jerrydough", Password = "p455w0rd", Email = "jerryyo@aol.com", ApprovalStatus = "Denied" },
-                new Volunteer { ID = 4, FirstName = "Jack", LastName = "Doh", Username = "jackdoh", Password = "pathword123", Email = "jackhack@yahoo.com", ApprovalStatus = "Approved" },
-                new Volunteer { ID = 5, FirstName = "Jill", LastName = "Dont", Username = "jilldont", Password = "wrodssap321", Email = "jillpill@gmail.com", ApprovalStatus = "Approved" },
+                new Volunteer { ID = 3, FirstName = "Jerry", LastName = "Dough", Username = "jerrydough", Password = "p455w0rd", Email = "jerryyo@aol.com", ApprovalStatus = "Disapproved" },
+                new Volunteer { ID = 4, FirstName = "Jack", LastName = "Doh", Username = "jackdoh", Password = "pathword123", Email = "jackhack@yahoo.com", ApprovalStatus = "Inactive" },
+                new Volunteer { ID = 5, FirstName = "Jill", LastName = "Dont", Username = "jilldont", Password = "wrodssap321", Email = "jillpill@gmail.com", ApprovalStatus = "Pending" },
             };
         }
 
