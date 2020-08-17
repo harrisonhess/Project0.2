@@ -93,8 +93,13 @@ namespace Project0._2.Controllers
             if (!String.IsNullOrEmpty(SearchKey))
             {
                 ViewData.Model = _opportunityRepository.SearchOpps(SearchKey);
+                return View("OpportunityList");
             }
-            return View("OpportunityList");
+            else
+            {
+                ViewData.Model = _opportunityRepository.GetOpportunities();
+                return View("OpportunityList");
+            }
 
         }
         [HttpGet]
@@ -141,8 +146,13 @@ namespace Project0._2.Controllers
             if (!String.IsNullOrEmpty(SearchString))
             {
                 ViewData.Model = _volunteerRepository.Search(SearchString);
+                return View("VolunteerList");
             }
-            return View("VolunteerList");
+            else
+            {
+                ViewData.Model = _volunteerRepository.getVolunteers();
+                return View("VolunteerList");
+            }
 
         }
 
