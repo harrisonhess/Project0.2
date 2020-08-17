@@ -69,7 +69,7 @@ namespace Project0._2.Models
         {
             if (!String.IsNullOrEmpty(keyword) || keyword != null)
             {
-                return Opportunities.Where(e => e.Name.Contains(keyword) || e.Center.Contains(keyword));
+                return Opportunities.Where(e => e.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase) || e.Center.Contains(keyword, StringComparison.OrdinalIgnoreCase));
             }
             else
             {

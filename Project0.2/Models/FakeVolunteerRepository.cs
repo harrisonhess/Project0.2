@@ -81,7 +81,7 @@ namespace Project0._2.Models
         {
             if (!String.IsNullOrEmpty(searchTerm) || searchTerm != null)
             {
-                return Volunteers.Where(e => e.FirstName.Contains(searchTerm) || e.LastName.Contains(searchTerm) || e.Email.Contains(searchTerm));
+                return Volunteers.Where(e => e.FirstName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) || e.LastName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) || e.Email.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
             }
             else
             {
