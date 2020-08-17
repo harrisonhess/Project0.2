@@ -28,6 +28,7 @@ namespace Project0._2.Models
         public string Address { get; set; }
         [Phone]
         public string PhoneNum { get; set; }
+        [Required(ErrorMessage = "Please enter volunteer email")]
         [EmailAddress]
         public string Email { get; set; }
         public string Education { get; set; }
