@@ -11,21 +11,22 @@
 </p>
     <form asp-action="SearchOpps" method="get">
         <div class="form-actions no-color">
-<p style="text-align: left;">
-     Search by Keyword: <input type="text" name="SearchKey" value="@ViewData["keyword"]" />
-    <input type="submit" value="Search" class="btn btn-primary" />
-    <span style="float: right;">
-        @Html.DropDownList("OpportunitySort", new List<SelectListItem>
-   {
-       new SelectListItem {Text = "All", Value = "1", Selected = true},
-       new SelectListItem {Text = "Central Park", Value = "2" },
-       new SelectListItem {Text = "Central Beach", Value = "3"},
-       new SelectListItem {Text = "Central Highway", Value = "4"},
-       new SelectListItem {Text = "TLC Elder Home", Value = "5"},
-       new SelectListItem {Text = "Lakeside Park", Value = "6"},
-   }, "Sort by")
-    </span>
-</p>
+            <p style="text-align: left;">
+                Search by Keyword: <input type="text" name="SearchKey" value="@ViewData["keyword"]" />
+                <input type="submit" value="Search" class="btn btn-primary" />
+                <span style="float: right;">
+                    @Html.DropDownList("OpportunitySort", new List<SelectListItem>
+               {
+                   new SelectListItem {Text = "All", Value = "1", Selected = true},
+                   new SelectListItem {Text = "Central Park", Value = "2" },
+                   new SelectListItem {Text = "Central Beach", Value = "3"},
+                   new SelectListItem {Text = "Central Highway", Value = "4"},
+                   new SelectListItem {Text = "TLC Elder Home", Value = "5"},
+                   new SelectListItem {Text = "Lakeside Park", Value = "6"},
+               }, "Sort by")
+                </span>
+                <a class="btn btn-primary" asp-action="OpportunityList">Reset</a>
+            </p>
  </div>
 </form>
 <table class="table">
